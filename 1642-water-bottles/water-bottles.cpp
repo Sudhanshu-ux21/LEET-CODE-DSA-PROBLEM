@@ -3,7 +3,7 @@ public:
     int numWaterBottles(int numBottles, int numExchange) {
         // int Total;
         int Total=numBottles;
-        // if(numBottles<numExchange) return numBottles;
+        if(numBottles<numExchange) return numBottles;
         
         while(numBottles>=numExchange){
             int newbottles=numBottles/numExchange;
