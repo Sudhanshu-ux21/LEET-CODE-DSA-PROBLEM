@@ -1,15 +1,20 @@
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        vector<int> v1(2, -1); // initialize with {-1, -1}
-        for(int i = 0; i < nums.size(); i++) {
-            if(nums[i] == target) {
-                if(v1[0] == -1) {
-                    v1[0] = i; // first index
-                }
-                v1[1] = i; // keep updating last index
+        int start=-1;
+        int end=-1;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]==target){
+                start=i;
+                break;
             }
         }
-        return v1;
+        for(int i=nums.size()-1;i>=0;i--){
+            if(nums[i]==target){
+                end=i;
+                break;
+            }
+        }
+        return{start,end};
     }
 };
